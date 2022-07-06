@@ -8,8 +8,17 @@
 import Foundation
 import CoreGraphics
 
-struct LineEntity: DrawingEntity {
+class LineEntity: DrawingEntity {
     let id: String
-    var rect: CGRect
-    let points: [(y: Float, x: Float)]
+    let owner: String
+    @Published var rect: CGRect
+    
+    let lines: [[(x: Double, y: Double)]]
+    
+    init(id: String = UUID().uuidString, owner: String, rect: CGRect, lines: [[(x: Double, y: Double)]]) {
+        self.id = id
+        self.owner = owner
+        self.rect = rect
+        self.lines = lines
+    }
 }

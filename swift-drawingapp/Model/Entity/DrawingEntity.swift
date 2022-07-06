@@ -10,5 +10,6 @@ import CoreGraphics
 
 protocol DrawingEntity {
     var id: String { get }
+    var owner: String { get }
     var rect: CGRect { get set }
 }

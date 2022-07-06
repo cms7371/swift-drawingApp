@@ -31,6 +31,9 @@ class DrawingViewController: UIViewController {
     }
     
     @IBAction func touchUpAddLine(_ sender: Any) {
+        let lineView = viewFactory.getNewLineView(with: userID, in: view.bounds)
+        lineView.setSelectedViewSubject(selctedViewSubject)
+        view.addSubview(lineView)
     }
     
     @IBAction func touchUpSyncronization(_ sender: Any) {
@@ -44,6 +47,7 @@ class DrawingViewController: UIViewController {
                 let previousView = previousBuffer.value
                 // 임시(SquareView의 상위 뷰로 바꿔줘야함)
                 (previousView as? SquareView)?.deselect()
+                (previousView as? LineView)?.deselect()
                 previousBuffer.send(selectedView)
             }
             .store(in: &disposeBag)

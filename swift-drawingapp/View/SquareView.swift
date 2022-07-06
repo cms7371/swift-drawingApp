@@ -24,7 +24,7 @@ class SquareView: UIView {
         super.init(frame: entity.rect)
         
         configureContents()
-        configureGesture()
+        configureGestures()
     }
 
     required init?(coder: NSCoder) {
@@ -49,13 +49,13 @@ class SquareView: UIView {
             .store(in: &disposeBag)
     }
     
-    private func configureGesture() {
+    private func configureGestures() {
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(_:))))
         self.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:))))
     }
     
     @objc
-    func handleTap(_ sender: Any) {
+    private func handleTap(_ sender: Any) {
         if isSelected {
             selectedViewSubject?.send(nil)
         } else {
@@ -65,7 +65,7 @@ class SquareView: UIView {
     }
     
     @objc
-    func handlePan(_ sender: UIPanGestureRecognizer) {
+    private func handlePan(_ sender: UIPanGestureRecognizer) {
         guard isSelected else { return }
         
         switch sender.state {

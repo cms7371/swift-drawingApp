@@ -14,4 +14,8 @@ class ViewFactory {
         
         return SquareView(entity: entity, userID: userID)
     }
+    
+    func getNewLineView(with userID: String, in bound: CGRect) -> LineView {
+        return LineView(userID: userID, frame: bound)
+    }
 }

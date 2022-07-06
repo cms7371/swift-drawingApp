@@ -18,6 +18,8 @@
 		83A8470428725EFF00C777B1 /* swift_drawingappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8470328725EFF00C777B1 /* swift_drawingappUITestsLaunchTests.swift */; };
 		C21B51902873DB9200F7D6F9 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21B518F2873DB9200F7D6F9 /* SquareView.swift */; };
 		C21B51922873F16800F7D6F9 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21B51912873F16800F7D6F9 /* ViewFactory.swift */; };
+		C223AF8B28750F9000BDC827 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C223AF8A28750F9000BDC827 /* LineView.swift */; };
+		C223AF8D28756BDB00BDC827 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C223AF8C28756BDB00BDC827 /* DrawingView.swift */; };
 		C260EBEA2872DEA100B4419A /* DrawingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260EBE92872DEA100B4419A /* DrawingEntity.swift */; };
 		C260EBEE2872DF2A00B4419A /* SquareEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260EBED2872DF2A00B4419A /* SquareEntity.swift */; };
 		C260EBF02872DF6D00B4419A /* LineEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260EBEF2872DF6D00B4419A /* LineEntity.swift */; };
@@ -56,6 +58,8 @@
 		83A8470328725EFF00C777B1 /* swift_drawingappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_drawingappUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C21B518F2873DB9200F7D6F9 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		C21B51912873F16800F7D6F9 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		C223AF8A28750F9000BDC827 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		C223AF8C28756BDB00BDC827 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		C260EBE92872DEA100B4419A /* DrawingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingEntity.swift; sourceTree = "<group>"; };
 		C260EBED2872DF2A00B4419A /* SquareEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareEntity.swift; sourceTree = "<group>"; };
 		C260EBEF2872DF6D00B4419A /* LineEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineEntity.swift; sourceTree = "<group>"; };
@@ -143,7 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				C21B51912873F16800F7D6F9 /* ViewFactory.swift */,
+				C223AF8C28756BDB00BDC827 /* DrawingView.swift */,
 				C21B518F2873DB9200F7D6F9 /* SquareView.swift */,
+				C223AF8A28750F9000BDC827 /* LineView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,7 +308,9 @@
 				C260EBEE2872DF2A00B4419A /* SquareEntity.swift in Sources */,
 				83A846E128725EFA00C777B1 /* AppDelegate.swift in Sources */,
 				C21B51902873DB9200F7D6F9 /* SquareView.swift in Sources */,
+				C223AF8B28750F9000BDC827 /* LineView.swift in Sources */,
 				C260EBEA2872DEA100B4419A /* DrawingEntity.swift in Sources */,
+				C223AF8D28756BDB00BDC827 /* DrawingView.swift in Sources */,
 				83A846E328725EFA00C777B1 /* SceneDelegate.swift in Sources */,
 				C21B51922873F16800F7D6F9 /* ViewFactory.swift in Sources */,
 			);
