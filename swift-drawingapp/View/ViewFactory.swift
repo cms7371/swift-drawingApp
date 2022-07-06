@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 
 class ViewFactory {
-    func getNewSquareView(with userID: String, in bound: CGRect) -> SquareView {
+    func getNewSquareView(with userID: String, in bound: CGRect) -> DrawingView {
         let entity = SquareEntity(ownerID: userID, in: bound)
         
         return SquareView(entity: entity, userID: userID)
     }
     
-    func getNewLineView(with userID: String, in bound: CGRect) -> LineView {
+    func getNewLineView(with userID: String, in bound: CGRect) -> DrawingView {
         return LineView(userID: userID, frame: bound)
     }
 }

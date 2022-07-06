@@ -8,28 +8,20 @@
 import UIKit
 import Combine
 
-class LineView: UIView {
+class LineView: DrawingView {
     
     @Published private var entity: LineEntity
-    private let selectable: Bool
-    @Published private var isSelected: Bool = false
     @Published private var isDrawing: Bool
-    
-    private var disposeBag = Set<AnyCancellable>()
-    
-    private weak var selectedViewSubject: CurrentValueSubject<UIView?, Never>?
     
     private var drawingLines = [[CGPoint]]()
     
     init(entity: LineEntity, userID: String, isDrawing: Bool = false) {
         self.entity = entity
-        self.selectable = entity.owner == userID
         self.isDrawing = isDrawing
         
         super.init(frame: entity.rect)
         
-        configureContents()
-        configureGestures()
+        self.selectable = entity.owner == userID
     }
     
     convenience init(userID: String, frame: CGRect) {
@@ -79,18 +71,13 @@ class LineView: UIView {
         }
     }
     
-    private func configureContents() {
+    override func configureContents() {
+        super.configureContents()
+        
         $isDrawing.receive(on: DispatchQueue.main)
             .sink { [weak self] isDrawing in
                 self?.backgroundColor = isDrawing ? .lightGray : .clear
             }.store(in: &disposeBag)
-        
-        layer.borderWidth = 5
-        $isSelected.receive(on: DispatchQueue.main)
-            .sink { [weak self] isSelected in
-                self?.layer.borderColor = isSelected ? UIColor.red.cgColor : UIColor.clear.cgColor
-            }.store(in: &disposeBag)
-        
         $entity
             .map { entity in
                 return entity.$rect
@@ -99,29 +86,19 @@ class LineView: UIView {
             .sink { [weak self] rect in
                 self?.frame = rect
             }.store(in: &disposeBag)
-        
     }
     
-    private func configureGestures() {
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(_:))))
+    override func configureGestures() {
+        super.configureGestures()
         addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:))))
     }
     
-    func setSelectedViewSubject(_ subject: CurrentValueSubject<UIView?, Never>) {
-        self.selectedViewSubject = subject
-    }
-    
     @objc
-    private func handleTap(_ sender: Any) {
+    override func handleTap(_ sender: Any) {
         if isDrawing {
             finishDrawing()
         } else {
-            if isSelected {
-                selectedViewSubject?.send(nil)
-            } else {
-                selectedViewSubject?.send(self)
-                isSelected = true
-            }
+            super.handleTap(sender)
         }
     }
     
@@ -197,9 +174,5 @@ class LineView: UIView {
         default:
             break
         }
-    }
-    
-    func deselect() {
-        isSelected = false
     }
 }
