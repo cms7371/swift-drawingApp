@@ -9,46 +9,32 @@ import UIKit
 import Combine
 
 class DrawingViewController: UIViewController {
-    
-    let viewFactory = ViewFactory()
-    // 임시
-    let userID: String = "hayden"
-    
-    let selctedViewSubject = CurrentValueSubject<DrawingView?, Never>(nil)
-    var disposeBag = Set<AnyCancellable>()
+    var drawingUseCase: DrawingUseCase?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpSelectedViewSubject()
+        // 의존성을 설정해주는 부분, 나중에 분리할 필요가 있을듯
+        let repository = EntityRepository()
+        drawingUseCase = Canvas(repository: repository, presenter: self)
     }
     
     @IBAction func touchUpAddSquare(_ sender: Any) {
-        let squareView = viewFactory.getNewSquareView(with: userID, in: view.bounds)
-        squareView.setSelectedViewSubject(selctedViewSubject)
-        view.addSubview(squareView)
+        drawingUseCase?.addSquareEntity()
     }
     
     @IBAction func touchUpAddLine(_ sender: Any) {
-        let lineView = viewFactory.getNewLineView(with: userID, in: view.bounds)
-        lineView.setSelectedViewSubject(selctedViewSubject)
-        view.addSubview(lineView)
+        drawingUseCase?.addLineEntity()
     }
     
     @IBAction func touchUpSyncronization(_ sender: Any) {
     }
-    
-    func setUpSelectedViewSubject() {
-        let previousBuffer = CurrentValueSubject<DrawingView?, Never>(nil)
-        
-        selctedViewSubject.receive(on: DispatchQueue.main)
-            .sink { selectedView in
-                let previousView = previousBuffer.value
-                previousView?.deselect()
-                previousBuffer.send(selectedView)
-            }
-            .store(in: &disposeBag)
-    }
-
 }
 
+extension DrawingViewController: DrawingPresenterPort {
+    var bounds: CGRect { return view.bounds }
+    
+    func addDrawingView(_ drawingView: DrawingView) {
+        view.addSubview(drawingView)
+    }
+}

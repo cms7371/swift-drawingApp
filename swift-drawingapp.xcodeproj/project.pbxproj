@@ -24,6 +24,8 @@
 		C260EBEE2872DF2A00B4419A /* SquareEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260EBED2872DF2A00B4419A /* SquareEntity.swift */; };
 		C260EBF02872DF6D00B4419A /* LineEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260EBEF2872DF6D00B4419A /* LineEntity.swift */; };
 		C2E405A0287BAE79003C516F /* EntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E4059E287BA48A003C516F /* EntityTests.swift */; };
+		C2E405B0287C07AD003C516F /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E405AF287C07AD003C516F /* Canvas.swift */; };
+		C2E405B2287C08AD003C516F /* EntityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E405B1287C08AD003C516F /* EntityRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		C260EBED2872DF2A00B4419A /* SquareEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareEntity.swift; sourceTree = "<group>"; };
 		C260EBEF2872DF6D00B4419A /* LineEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineEntity.swift; sourceTree = "<group>"; };
 		C2E4059E287BA48A003C516F /* EntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityTests.swift; sourceTree = "<group>"; };
+		C2E405AF287C07AD003C516F /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		C2E405B1287C08AD003C516F /* EntityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +124,12 @@
 				83A846E028725EFA00C777B1 /* AppDelegate.swift */,
 				83A846E228725EFA00C777B1 /* SceneDelegate.swift */,
 				83A846E428725EFA00C777B1 /* DrawingViewController.swift */,
+				83A846EE28725EFE00C777B1 /* Info.plist */,
 				83A846E628725EFA00C777B1 /* Main.storyboard */,
 				83A846E928725EFE00C777B1 /* Assets.xcassets */,
 				83A846EB28725EFE00C777B1 /* LaunchScreen.storyboard */,
-				83A846EE28725EFE00C777B1 /* Info.plist */,
+				C2E405AF287C07AD003C516F /* Canvas.swift */,
+				C2E405B1287C08AD003C516F /* EntityRepository.swift */,
 			);
 			path = "swift-drawingapp";
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C260EBF02872DF6D00B4419A /* LineEntity.swift in Sources */,
+				C2E405B0287C07AD003C516F /* Canvas.swift in Sources */,
 				83A846E528725EFA00C777B1 /* DrawingViewController.swift in Sources */,
 				C260EBEE2872DF2A00B4419A /* SquareEntity.swift in Sources */,
 				83A846E128725EFA00C777B1 /* AppDelegate.swift in Sources */,
@@ -315,6 +322,7 @@
 				C260EBEA2872DEA100B4419A /* DrawingEntity.swift in Sources */,
 				C223AF8D28756BDB00BDC827 /* DrawingView.swift in Sources */,
 				83A846E328725EFA00C777B1 /* SceneDelegate.swift in Sources */,
+				C2E405B2287C08AD003C516F /* EntityRepository.swift in Sources */,
 				C21B51922873F16800F7D6F9 /* ViewFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
