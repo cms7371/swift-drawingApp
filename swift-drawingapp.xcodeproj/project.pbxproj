@@ -23,6 +23,7 @@
 		C260EBEA2872DEA100B4419A /* DrawingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260EBE92872DEA100B4419A /* DrawingEntity.swift */; };
 		C260EBEE2872DF2A00B4419A /* SquareEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260EBED2872DF2A00B4419A /* SquareEntity.swift */; };
 		C260EBF02872DF6D00B4419A /* LineEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260EBEF2872DF6D00B4419A /* LineEntity.swift */; };
+		C2E405A0287BAE79003C516F /* EntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E4059E287BA48A003C516F /* EntityTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		C260EBE92872DEA100B4419A /* DrawingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingEntity.swift; sourceTree = "<group>"; };
 		C260EBED2872DF2A00B4419A /* SquareEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareEntity.swift; sourceTree = "<group>"; };
 		C260EBEF2872DF6D00B4419A /* LineEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineEntity.swift; sourceTree = "<group>"; };
+		C2E4059E287BA48A003C516F /* EntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				83A846F728725EFF00C777B1 /* swift_drawingappTests.swift */,
+				C2E4059E287BA48A003C516F /* EntityTests.swift */,
 			);
 			path = "swift-drawingappTests";
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2E405A0287BAE79003C516F /* EntityTests.swift in Sources */,
 				83A846F828725EFF00C777B1 /* swift_drawingappTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -50,7 +50,7 @@ class LineView: DrawingView {
         }
         else {
             let curRect = frame
-            lines = entity.lines.map({ line in
+            lines = entity.linesRatioCoord.map({ line in
                 return line.map { relative in
                     let x = curRect.width * relative.x
                     let y = curRect.height * relative.y
@@ -103,6 +103,7 @@ class LineView: DrawingView {
     }
     
     private func finishDrawing() {
+        // 이 책임을 LineEntity로 넘길 필요가 있을 것 같음
         let (minX, maxX) = drawingLines.flatMap { $0 }
             .reduce((CGFloat.infinity, CGFloat(0))) { partialResult, point in
                 let (currentMin, currentMax) = partialResult
